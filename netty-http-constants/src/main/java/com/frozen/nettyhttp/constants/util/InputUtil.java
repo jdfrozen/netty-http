@@ -3,7 +3,11 @@ package com.frozen.nettyhttp.constants.util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+/**
+ * @Auther: 冯默风
+ * @Date: 2018/12/30 11:05
+ * @Description:
+ */
 public class InputUtil {
     private static final BufferedReader KEYBOARD_INPUT = new BufferedReader(new InputStreamReader(System.in));
 
