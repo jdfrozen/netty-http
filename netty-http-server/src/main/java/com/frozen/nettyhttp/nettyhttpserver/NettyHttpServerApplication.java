@@ -1,4 +1,4 @@
-package com.frozen.nettyhttpserver;
+package com.frozen.nettyhttp.nettyhttpserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

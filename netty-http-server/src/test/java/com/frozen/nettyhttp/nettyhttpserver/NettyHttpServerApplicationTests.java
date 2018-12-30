@@ -1,4 +1,4 @@
-package com.frozen.nettyhttpserver;
+package com.frozen.nettyhttp.nettyhttpserver;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
