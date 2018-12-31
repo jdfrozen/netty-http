@@ -7,7 +7,7 @@
     <groupId>com.frozen</groupId>
     <artifactId>netty-http</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <modules>
         <module>netty-http-constants</module>
     </modules>
