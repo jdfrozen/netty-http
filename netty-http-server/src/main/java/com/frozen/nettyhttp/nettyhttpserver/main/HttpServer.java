@@ -10,11 +10,14 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.http.HttpRequestDecoder;
+import io.netty.handler.codec.http.HttpResponseEncoder;
+import io.netty.handler.stream.ChunkedWriteHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @Auther: 冯默风
+ * @Auther: Frozen
  * @Date: 2018/12/31 19:37
  * @Description:
  */
@@ -31,7 +34,10 @@ public class HttpServer {
             serverBootstrap.childHandler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected void initChannel(SocketChannel socketChannel) throws Exception {
-
+                    socketChannel.pipeline().addLast(new HttpResponseEncoder());
+                    socketChannel.pipeline().addLast(new HttpRequestDecoder());
+                    socketChannel.pipeline().addLast(new ChunkedWriteHandler());// 图片传输处理器
+                    socketChannel.pipeline().addLast(new HttpServerHandler());
                 }
             });
             serverBootstrap.option(ChannelOption.SO_BACKLOG,128);
