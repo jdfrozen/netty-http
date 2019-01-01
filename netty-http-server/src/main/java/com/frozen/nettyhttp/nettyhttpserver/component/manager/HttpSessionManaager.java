@@ -42,4 +42,10 @@ public class HttpSessionManaager {
             return false;
         }
     }
+    public static void invalidate(String sessionId) {
+        SESSION_MAP.remove(sessionId) ;
+    }
+    public static HttpSession getSession(String sessionId) {
+        return SESSION_MAP.get(sessionId) ;
+    }
 }
