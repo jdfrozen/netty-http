@@ -1,5 +1,6 @@
 package com.frozen.nettyhttp.nettyhttpserver.service;
 
+import com.frozen.nettyhttp.constants.info.HostInfo;
 import com.frozen.nettyhttp.nettyhttpserver.handler.HttpServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -26,7 +27,7 @@ public class HttpServer {
     public void run() throws Exception{
         EventLoopGroup bossGroup = new NioEventLoopGroup(10);
         EventLoopGroup workGroup = new NioEventLoopGroup(20);
-        log.info("服务器启动成功，监听端口为："+9999);
+        log.info("服务器启动成功，监听端口为："+HostInfo.PORT);
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(bossGroup,workGroup).channel(NioServerSocketChannel.class);
@@ -41,7 +42,7 @@ public class HttpServer {
             });
             serverBootstrap.option(ChannelOption.SO_BACKLOG,128);
             serverBootstrap.childOption(ChannelOption.SO_KEEPALIVE,true);
-            ChannelFuture future = serverBootstrap.bind(9999).sync();
+            ChannelFuture future = serverBootstrap.bind(HostInfo.PORT).sync();
             future.channel().closeFuture().sync();
         }finally {
             workGroup.shutdownGracefully();

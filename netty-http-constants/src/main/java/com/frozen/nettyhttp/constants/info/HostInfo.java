@@ -1,6 +1,6 @@
 package com.frozen.nettyhttp.constants.info;
 /**
- * @Auther: 冯默风
+ * @Auther: Frozen
  * @Date: 2018/12/30 11:05
  * @Description:
  */

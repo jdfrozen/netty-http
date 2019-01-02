@@ -12,5 +12,5 @@
     <artifactId>netty-http-constants</artifactId>
     <packaging>jar</packaging>
     <name>netty-http-constants</name>
-
+    <url>http://www.example.com</url>
 </project>

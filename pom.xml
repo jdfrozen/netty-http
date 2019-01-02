@@ -10,7 +10,9 @@
     <version>1.0</version>
     <modules>
         <module>netty-http-constants</module>
+        <module>netty-http-server</module>
     </modules>
+    <name>netty-http</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
@@ -19,9 +21,21 @@
         <netty.version>4.1.31.Final</netty.version>
         <netty-http.version>1.0</netty-http.version>
         <fastjson.version>1.2.51</fastjson.version>
+        <spring.version>2.1.1.RELEASE</spring.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
             <dependency>
                 <groupId>com.frozen</groupId>
                 <artifactId>netty-http-constants</artifactId>
@@ -45,5 +59,17 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${jdk.version}</source><!-- 源代码使用的开发版本 -->
+                    <target>${jdk.version}</target><!-- 需要生成的目标class文件的编译版本 -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
