@@ -1,4 +1,4 @@
-package com.frozen.nettyhttp.nettyhttpserver.main;
+package com.frozen.nettyhttp.nettyhttpserver.service;
 
 import com.frozen.nettyhttp.nettyhttpserver.handler.HttpServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
@@ -9,7 +9,6 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.http.HttpRequestDecoder;
 import io.netty.handler.codec.http.HttpResponseEncoder;
 import io.netty.handler.stream.ChunkedWriteHandler;
@@ -19,7 +18,7 @@ import org.slf4j.LoggerFactory;
 /**
  * @Auther: Frozen
  * @Date: 2018/12/31 19:37
- * @Description:
+ * @Description: netty-Http 服务类
  */
 public class HttpServer {
     private static Logger log = LoggerFactory.getLogger(HttpServer.class);

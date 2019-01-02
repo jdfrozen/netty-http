@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * @Auther: Frozen
  * @Date: 2019/1/1 21:44
- * @Description:
+ * @Description: HttpSession管理类
  */
 public class HttpSessionManaager {
     private static final Map<String,HttpSession> SESSION_MAP = new ConcurrentHashMap<>();

@@ -7,7 +7,7 @@ import java.util.UUID;
 /**
  * @Auther: Frozen
  * @Date: 2019/1/1 21:39
- * @Description:
+ * @Description: HttpSession默认实现，采用HashMap
  */
 public class DefaultHttpSession implements HttpSession{
     private String sessionId;
